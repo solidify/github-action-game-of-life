@@ -26,8 +26,6 @@ jobs:
       - name: Test action
         uses: ./
         id: hello
-        with:
-          who-to-greet: 'Mona the Octocat'
       
       - uses: actions/upload-artifact@v2
         if: always()
