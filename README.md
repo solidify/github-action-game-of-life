@@ -4,9 +4,9 @@ Uses commit hash to seed a game of life and generates a unique gif stamp for you
 
 ## Parameters
 
-`gol-path` - output path for the generated game of life gif
-`rows` - number of rows in the world
-`columns` - number of columns in the world
+- `gol-path` - output path for the generated game of life gif
+- `rows` - number of rows in the world
+- `columns` - number of columns in the world
 
 Example from the last action workflow run:
 
