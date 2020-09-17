@@ -35,11 +35,11 @@ try {
 
   const engine = new ConwaysGameEngine(config);
   seed(engine, seedHash, [14, 10]);
-  renderImage(engine, 0, dir);
+  await renderImage(engine, 0, dir);
 
   for (var i = 0; i < 100; i++) {
     engine.step();
-    renderImage(engine, i+1, dir);
+    await renderImage(engine, i+1, dir);
   }
   
   renderGif(dir, './gol.gif', engine);
