@@ -8,13 +8,10 @@ const fs = require('fs');
 
 async function run() {
   try {
-    // `who-to-greet` input defined in action metadata file
-    //const nameToGreet = core.getInput('who-to-greet');
-    //console.log(`Hello ${nameToGreet}!`);
-    //const time = (new Date()).toTimeString();
-    // Get the JSON webhook payload for the event that triggered the workflow
-    //const payload = JSON.stringify(github.context.payload, undefined, 2)
-    //console.log(`The event payload: ${payload}`);
+    const golPath = core.getInput('gol-path');
+    const columns = core.getInput('columns');
+    const rows = core.getInput('rows');
+    const generations = core.getInput('generations');
   
     const dir = './images';
     if (!fs.existsSync(dir)){
@@ -24,22 +21,21 @@ async function run() {
     const seedHash = github.context.payload.head_commit.id;
     console.log('seed hash', seedHash);
     const config = {
-      rowSize: 14,
-      colSize: 10,
+      rowSize: rows,
+      colSize: columns,
       rules: defaultRules(),
     }
   
     const engine = new ConwaysGameEngine(config);
-    seed(engine, seedHash, [14, 10]);
+    seed(engine, seedHash, [rows, columns]);
     await renderImage(engine, 0, dir);
   
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < generations; i++) {
       engine.step();
       await renderImage(engine, i+1, dir);
     }
     
-    renderGif(dir, './gol.gif', engine);
-    core.setOutput("gif", './gol.gif');
+    renderGif(dir, golPath, engine);
     console.log("Done");
   } catch (error) {
     console.log(JSON.stringify(error));

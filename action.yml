@@ -1,13 +1,22 @@
-name: 'Game Of Life'
-description: 'Greet someone and record the time'
+name: 'Game Of Life Stamp'
+description: 'Build game of life gif seeded by the commit hash that triggered the workflow.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  if: # id of output
-    description: 'Path to gif file'
+  gol-path:
+    description: 'Path of the generated game of life gif'
+    required: false
+    default: './gol.gif'
+  columns:
+    description: 'Number of columns in the world grid'
+    required: false
+    default: 10
+  rows:
+    description: 'Number of rows in the world grid'
+    required: false
+    default: 14
+  generations: 
+    description: 'Number of generations that the game of life runs'
+    required: false
+    default: 100
 runs:
   using: 'node12'
   main: 'main.js'
