@@ -1,0 +1,13 @@
+name: 'Game Of Life'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  if: # id of output
+    description: 'Path to gif file'
+runs:
+  using: 'node12'
+  main: 'main.js'

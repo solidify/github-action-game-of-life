@@ -1,0 +1,26 @@
+{
+  "name": "game-of-life-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "@actions/github": "^4.0.0",
+    "@monarchwadia/conways-game-engine": "^1.1.0",
+    "gifencoder": "^2.0.1",
+    "png-file-stream": "^1.2.1",
+    "pureimage": "^0.2.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solidify/game-of-life-action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solidify/game-of-life-action/issues"
+  },
+  "homepage": "https://github.com/solidify/game-of-life-action#readme",
+  "scripts": {}
+}
