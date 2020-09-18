@@ -8,6 +8,7 @@ All parameters are optional.
 - `gol-path` - output path for the generated game of life gif
 - `rows` - number of rows in the world
 - `columns` - number of columns in the world
+- `generations` - how many generations will be played
 
 Example result from the last action workflow run:
 
