@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@actions/core": "^1.2.5",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
     "@monarchwadia/conways-game-engine": "^1.1.0",
     "gifencoder": "^2.0.1",
